@@ -1,0 +1,1 @@
+Edge streaming AI coach responses implemented. Ultra-fast, low-latency personalized coaching simulation. Integrate into UI with fetch + event listeners for real-time feel.
