@@ -6,18 +6,18 @@ export default function Navbar() {
           Dobeu<span className="text-amber-500">.</span>
         </a>
         <div className="hidden items-center gap-8 text-sm font-bold text-ink/70 md:flex">
-          <a href="#demo" className="hover:text-indigo-700">
-            Try the coach
+          <a href="#how" className="hover:text-indigo-700">
+            How it works
           </a>
-          <a href="#testimonials" className="hover:text-indigo-700">
-            Stories
+          <a href="#who" className="hover:text-indigo-700">
+            Who it&apos;s for
           </a>
           <a href="#book" className="hover:text-indigo-700">
             Book
           </a>
         </div>
         <a href="#book" className="ds-btn-primary text-sm">
-          Get started
+          Book a session
         </a>
       </nav>
     </header>

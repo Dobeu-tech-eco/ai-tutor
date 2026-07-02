@@ -1,14 +1,14 @@
-# Dobeu AI Tutor / Coach Connect
+# Dobeu AI Coaching — 1-on-1 help setting up AI
 
-Official repository for the **dobeu.tech** AI coaching platform — a hybrid AI + human
-coaching experience. Practice with a 24/7 streaming AI coach, then book time with a
-real coach. Built on the Dobeu Design System v3 (Nunito, indigo/amber).
+Official repository for **dobeu.tech** — personalized, hands-on 1-on-1 coaching on
+putting AI to work in your business: choosing the right tools, building real
+automations, and learning workflows that stick. Built on the Dobeu Design System v3
+(Nunito, indigo/amber).
 
 ## Stack
 
 - **Next.js 14** (App Router) + **TypeScript**
 - **Tailwind CSS** with DS v3 tokens
-- **Anthropic SDK** — streaming AI coach (Edge runtime)
 - **Resend** — booking email notifications
 - **Zod** — request validation · **Vitest** — unit tests
 
@@ -22,20 +22,19 @@ npm run dev                  # http://localhost:3000
 
 ### Required environment variables
 
-See [`.env.example`](./.env.example). At minimum:
+See [`.env.example`](./.env.example):
 
-- `ANTHROPIC_API_KEY` — powers the AI coach.
 - `RESEND_API_KEY`, `BOOKING_FROM_EMAIL`, `BOOKING_TO_EMAIL` — power the booking form.
+- `KV_REST_API_URL`, `KV_REST_API_TOKEN` — optional Upstash rate limiting (fails open without).
 
-The app degrades gracefully: if a key is missing, the relevant endpoint returns a
+The app degrades gracefully: if a key is missing, the booking endpoint returns a
 clean `503` instead of crashing.
 
 ## Routes
 
 | Path | Runtime | Purpose |
 |------|---------|---------|
-| `/` | — | Landing page (hero, live coach demo, testimonials, booking) |
-| `POST /api/edge-coach-stream` | edge | Streaming AI coach — see [its README](./app/api/edge-coach-stream/README.md) |
+| `/` | — | Landing page (hero, how it works, who it's for, booking) |
 | `POST /api/booking` | node | Validates and emails a coaching request via Resend |
 
 ## Scripts
@@ -50,11 +49,10 @@ npm run lint       # next lint
 
 ## Deploy
 
-Deploys to **Vercel**. Set the environment variables above in the Vercel project
-settings. The coach endpoint uses the Edge runtime; the booking endpoint uses Node.
+Deploys to **Vercel** (project `ai-tutor`, domain **dobeu.tech**). Set the environment
+variables above in the Vercel project settings.
 
 ## Notes
 
-- AI coaching is not a substitute for professional medical, legal, or mental-health care.
-- The booking form includes a honeypot field for basic bot protection.
+- The booking form includes a honeypot field and per-IP rate limiting for bot protection.
 - `*.fig` design source files are git-ignored — keep them in design storage, not the repo.

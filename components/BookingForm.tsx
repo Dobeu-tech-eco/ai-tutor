@@ -47,7 +47,7 @@ export default function BookingForm() {
           Request received 🎉
         </h3>
         <p className="mt-2 text-ink/70">
-          A Dobeu coach will reach out shortly. Check your inbox.
+          Jeremy will reach out shortly to schedule your session. Check your inbox.
         </p>
       </div>
     );
@@ -55,7 +55,7 @@ export default function BookingForm() {
 
   return (
     <form onSubmit={onSubmit} className="ds-card grid gap-4" noValidate>
-      <h3 className="text-2xl font-extrabold text-ink">Book a human coach</h3>
+      <h3 className="text-2xl font-extrabold text-ink">Book your 1-on-1 AI coaching session</h3>
 
       <div className="grid gap-1">
         <label htmlFor="name" className="text-sm font-bold text-ink/70">
@@ -79,7 +79,7 @@ export default function BookingForm() {
 
       <div className="grid gap-1">
         <label htmlFor="goal" className="text-sm font-bold text-ink/70">
-          What would you like coaching on?
+          What would you like AI to do for you?
         </label>
         <textarea
           id="goal"

@@ -2,7 +2,7 @@
   "name": "dobeu-ai-tutor",
   "version": "1.0.0",
   "private": true,
-  "description": "Dobeu AI Tutor / Coach Connect — hybrid AI + human coaching platform",
+  "description": "Dobeu AI Coaching — personalized 1-on-1 coaching on setting up AI for your business",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -12,7 +12,6 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.1",
     "@upstash/ratelimit": "^2.0.8",
     "@upstash/redis": "^1.38.0",
     "next": "14.2.5",

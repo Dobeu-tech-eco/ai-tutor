@@ -1,29 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { bookingRequestSchema, coachRequestSchema } from "@/lib/validation";
-
-describe("coachRequestSchema", () => {
-  it("accepts a valid prompt", () => {
-    const r = coachRequestSchema.safeParse({ prompt: "How do I focus?" });
-    expect(r.success).toBe(true);
-  });
-
-  it("rejects an empty prompt", () => {
-    const r = coachRequestSchema.safeParse({ prompt: "   " });
-    expect(r.success).toBe(false);
-  });
-
-  it("rejects an over-long prompt", () => {
-    const r = coachRequestSchema.safeParse({ prompt: "x".repeat(4001) });
-    expect(r.success).toBe(false);
-  });
-});
+import { bookingRequestSchema } from "@/lib/validation";
 
 describe("bookingRequestSchema", () => {
   it("accepts a valid booking", () => {
     const r = bookingRequestSchema.safeParse({
       name: "Maya",
       email: "maya@example.com",
-      goal: "Build a reflection habit",
+      goal: "Automate my client follow-ups with AI",
     });
     expect(r.success).toBe(true);
   });
@@ -33,6 +16,15 @@ describe("bookingRequestSchema", () => {
       name: "Maya",
       email: "not-an-email",
       goal: "x",
+    });
+    expect(r.success).toBe(false);
+  });
+
+  it("rejects an empty goal", () => {
+    const r = bookingRequestSchema.safeParse({
+      name: "Maya",
+      email: "maya@example.com",
+      goal: "   ",
     });
     expect(r.success).toBe(false);
   });
