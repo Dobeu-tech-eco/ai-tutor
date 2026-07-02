@@ -44,7 +44,7 @@ Because real `parallel-deep-research` couldn't run without that auth, the compet
 
 ## 3. Competitor research: AI coaching / AI tutoring
 
-**Positioning read:** Dobeu "AI Tutor / Coach Connect" (dobeu.info) — booking form + testimonials + AI examples — is a **hybrid AI + human-coach connect** product. That puts it primarily in the **AI coaching** market, with **AI tutoring** as an adjacency.
+**Positioning read:** Dobeu "AI Tutor / Coach Connect" (dobeu.tech) — booking form + testimonials + AI examples — is a **hybrid AI + human-coach connect** product. That puts it primarily in the **AI coaching** market, with **AI tutoring** as an adjacency.
 
 ### Market context
 - Global coaching market ≈ **$5.8B in 2026**; AI-specific coaching growing **~22–28%/yr**.
