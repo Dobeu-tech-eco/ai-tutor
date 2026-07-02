@@ -1,6 +1,6 @@
 # Dobeu AI Tutor / Coach Connect
 
-Official repository for the **dobeu.info** AI coaching platform — a hybrid AI + human
+Official repository for the **dobeu.tech** AI coaching platform — a hybrid AI + human
 coaching experience. Practice with a 24/7 streaming AI coach, then book time with a
 real coach. Built on the Dobeu Design System v3 (Nunito, indigo/amber).
 

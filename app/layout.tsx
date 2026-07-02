@@ -8,7 +8,7 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const siteUrl = "https://dobeu.info";
+const siteUrl = "https://dobeu.tech";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
