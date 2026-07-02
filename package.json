@@ -1,6 +1,6 @@
 {
   "name": "dobeu-ai-tutor",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Dobeu AI Tutor / Coach Connect — hybrid AI + human coaching platform",
   "scripts": {
