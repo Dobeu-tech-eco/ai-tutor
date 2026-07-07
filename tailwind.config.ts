@@ -1,6 +1,5 @@
 import type { Config } from "tailwindcss";
 
-// Dobeu Design System v3 tokens
 const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
@@ -8,33 +7,35 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        // DS v3 brand palette: indigo (primary) + amber (accent)
-        indigo: {
-          DEFAULT: "#4f46e5",
-          50: "#eef2ff",
-          100: "#e0e7ff",
-          500: "#6366f1",
-          600: "#4f46e5",
-          700: "#4338ca",
-          900: "#312e81",
-        },
-        amber: {
-          DEFAULT: "#f59e0b",
-          400: "#fbbf24",
-          500: "#f59e0b",
-          600: "#d97706",
-        },
-        ink: "#1e1b4b",
-      },
       fontFamily: {
-        sans: ["var(--font-nunito)", "Nunito", "system-ui", "sans-serif"],
+        sans: ["var(--font-nunito)", "Nunito", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
+      colors: {
+        "indigo-primary": "#6B5CE7",
+        "indigo-slate":   "#5A4FAB",
+        "indigo-deep":    "#4A3FA8",
+        "amber-warm":     "#F4A261",
+        "dark-surface":   "#1A1A2E",
+        "dark-elevated":  "#242440",
+        "dark-deeper":    "#0F0F1F",
       },
       borderRadius: {
-        ds: "0.875rem",
+        sm:   "6px",
+        md:   "12px",
+        lg:   "20px",
+        pill: "999px",
       },
       boxShadow: {
-        ds: "0 10px 30px -12px rgba(79, 70, 229, 0.35)",
+        xs:   "0 1px 2px rgba(26,26,46,0.06)",
+        sm:   "0 2px 6px rgba(26,26,46,0.08)",
+        md:   "0 6px 18px rgba(26,26,46,0.10)",
+        lg:   "0 16px 40px rgba(26,26,46,0.14)",
+        "ring-indigo": "0 0 0 3px rgba(107,92,231,0.22)",
+        "ring-amber":  "0 0 0 3px rgba(244,162,97,0.25)",
+      },
+      maxWidth: {
+        "site": "1080px",
       },
     },
   },
