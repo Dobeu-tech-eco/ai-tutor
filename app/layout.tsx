@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
+import { Nunito, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const nunito = Nunito({
   subsets: ["latin"],
   variable: "--font-nunito",
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+  weight: ["400", "500", "700"],
 });
 
 const siteUrl = "https://dobeu.tech";
@@ -44,7 +52,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={nunito.variable}>
+    <html
+      lang="en"
+      className={`${nunito.variable} ${jetbrainsMono.variable}`}
+      data-mode="dark"
+    >
       <body className="font-sans">{children}</body>
     </html>
   );
