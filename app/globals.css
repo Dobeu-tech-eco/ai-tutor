@@ -56,7 +56,7 @@
   --bg-tint-amber:   var(--brand-dark-elevated);
 
   --fg-body:         var(--brand-body-text-dark);
-  --fg-heading:      var(--brand-indigo-primary);
+  --fg-heading:      #F0EEFF;
   --fg-muted:        #9A9AB0;
 
   --cta-bg:          var(--brand-amber-warm);
