@@ -38,3 +38,7 @@ yarn-error.log*
 
 # sdd scratch
 .superpowers/
+
+# Ruflo hub-only policy (memory lives at repos root; never per-repo)
+.swarm/
+.claude-flow/

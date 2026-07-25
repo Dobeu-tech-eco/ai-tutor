@@ -5,10 +5,14 @@ import { checkRateLimit, clientIp } from "@/lib/ratelimit";
 
 export const runtime = "nodejs";
 
-function json(status: number, body: unknown): Response {
+function json(
+  status: number,
+  body: unknown,
+  extraHeaders: Record<string, string> = {},
+): Response {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...extraHeaders },
   });
 }
 
@@ -21,6 +25,22 @@ function escapeHtml(s: string): string {
 }
 
 export async function POST(req: Request): Promise<Response> {
+  // Rate limit first — cheapest rejection path, before any parsing work.
+  const rl = await checkRateLimit(`booking:${clientIp(req)}`, {
+    limit: 5,
+    windowMs: 300_000,
+  });
+  if (!rl.ok) {
+    return json(
+      429,
+      {
+        error: "Too many requests — give it a moment.",
+        retryAfterSec: rl.retryAfterSec,
+      },
+      { "Retry-After": String(Math.max(1, rl.retryAfterSec)) },
+    );
+  }
+
   let payload: unknown;
   try {
     payload = await req.json();
@@ -33,17 +53,6 @@ export async function POST(req: Request): Promise<Response> {
     return json(400, {
       error: "Invalid request",
       details: parsed.error.flatten().fieldErrors,
-    });
-  }
-
-  const rl = await checkRateLimit(`booking:${clientIp(req)}`, {
-    limit: 5,
-    windowMs: 300_000,
-  });
-  if (!rl.ok) {
-    return json(429, {
-      error: "Too many requests — give it a moment.",
-      retryAfterSec: rl.retryAfterSec,
     });
   }
 
@@ -67,7 +76,8 @@ export async function POST(req: Request): Promise<Response> {
       from,
       to,
       replyTo: email,
-      subject: `New coaching request from ${name}`,
+      // Strip control characters so a crafted name can't tamper with the subject.
+      subject: `New coaching request from ${name.replace(/[\r\n\t]+/g, " ")}`,
       html: `<h2>New Coach Connect request</h2>
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
