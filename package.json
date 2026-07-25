@@ -2,6 +2,7 @@
   "name": "dobeu-ai-tutor",
   "version": "1.0.0",
   "private": true,
+  "license": "UNLICENSED",
   "description": "Dobeu AI Coaching — personalized 1-on-1 coaching on setting up AI for your business",
   "scripts": {
     "dev": "next dev",
