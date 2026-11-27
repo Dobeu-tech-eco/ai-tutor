@@ -21,8 +21,8 @@ const siteUrl = "https://dobeu.tech";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Dobeu AI Coaching \u2014 1-on-1 help setting up AI for your business",
-    template: "%s \u00b7 Dobeu",
+    default: "Learn with Dobeu \u2014 1-on-1 help setting up AI for your business",
+    template: "%s \u00b7 Learn with Dobeu",
   },
   description:
     "Personalized 1-on-1 coaching on putting AI to work: pick the right tools, build real automations, and learn workflows that stick. Book a session.",
@@ -35,11 +35,11 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Dobeu AI Coaching \u2014 1-on-1 help setting up AI",
+    title: "Learn with Dobeu \u2014 1-on-1 help setting up AI",
     description:
       "Hands-on, personalized coaching on setting up AI for your business. We build it together on your actual stack. Book a 1-on-1 session.",
     url: siteUrl,
-    siteName: "Dobeu",
+    siteName: "Learn with Dobeu",
     type: "website",
     images: [{ url: "/og-image.png", width: 1408, height: 768 }],
   },
