@@ -118,7 +118,7 @@ export default function Navbar() {
         <a
           href="#top"
           className="flex items-center gap-[11px] flex-none no-underline"
-          aria-label="Dobeu home"
+          aria-label="Learn with Dobeu home"
         >
           <DobeuMark size={34} />
           <span
@@ -127,8 +127,8 @@ export default function Navbar() {
               letterSpacing: "-0.01em",
             }}
           >
-            <span style={{ color: "var(--brand-indigo-slate)" }}>dobeu</span>
-            <span style={{ color: "var(--brand-amber-warm)" }}>.tech</span>
+            <span style={{ color: "var(--brand-indigo-slate)" }}>Learn with </span>
+            <span style={{ color: "var(--brand-amber-warm)" }}>Dobeu</span>
           </span>
         </a>
 
