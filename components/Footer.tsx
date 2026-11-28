@@ -139,8 +139,8 @@ export default function Footer() {
                   letterSpacing: "-0.01em",
                 }}
               >
-                <span style={{ color: "var(--brand-indigo-slate)" }}>dobeu</span>
-                <span style={{ color: "var(--brand-amber-warm)" }}>.tech</span>
+                <span style={{ color: "var(--brand-indigo-slate)" }}>Learn with </span>
+                <span style={{ color: "var(--brand-amber-warm)" }}>Dobeu</span>
               </span>
             </a>
             <p
